@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './screens/HomePage.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'V-Netra',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: HomePage(),
     );
   }
