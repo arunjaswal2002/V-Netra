@@ -40,8 +40,16 @@ dependencies:
   google_ml_kit: ^0.13.0
   permission_handler: ^10.2.0
   google_mlkit_text_recognition: ^0.5.0
-
-
+  geolocator: ^9.0.2
+  url_launcher: ^6.1.10
+  maps_launcher: ^2.2.0
+  flutter_local_notifications: ^13.0.0
+  rxdart: ^0.27.7
+  flutter_native_timezone: ^2.0.0
+  timezone: ^0.9.1
+  tflite: ^1.1.1
+  http: ^0.13.5
+  image_picker: ^0.8.7
 
 
 dev_dependencies:
@@ -71,6 +79,8 @@ flutter:
     - assets/face_rec.png
     - assets/image_rec.png
     - assets/notepad.png
+    - mobilenet_v1_1.0_224.tflite
+    - mobilenet_v1_1.0_224.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

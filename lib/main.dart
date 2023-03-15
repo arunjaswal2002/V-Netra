@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import './screens/HomePage.dart';
+import 'package:camera/camera.dart';
+
+List<CameraDescription> cameras = [];
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
   runApp(const MyApp());
 }
 
@@ -13,8 +18,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'V-Netra',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: HomePage(cameras),
     );
   }
 }

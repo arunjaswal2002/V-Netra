@@ -1,69 +1,45 @@
 import 'package:flutter/material.dart';
-import 'colors.dart' as color;
 
 class ServiceCard extends StatelessWidget {
+  var text;
+  Icon i;
+  Function f;
+  ServiceCard(this.i, this.text, this.f);
   // const ServiceCard({super.key});
-  final String title;
-  final Function onpressed;
-  final Image myImage;
-  ServiceCard(this.title, this.onpressed, this.myImage);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10),
-      height: 200,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-            color.AppColor.gradientFirst.withOpacity(0.8),
-            color.AppColor.gradientSecond.withOpacity(0.9)
-          ], begin: Alignment.bottomLeft, end: Alignment.centerRight),
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-              topRight: Radius.circular(80)),
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(5, 10),
-                blurRadius: 20,
-                color: color.AppColor.gradientSecond.withOpacity(0.2))
-          ]),
-      child: Container(
-        padding: const EdgeInsets.only(left: 20, top: 25, right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 30,
-                color: color.AppColor.homePageContainerTextSmall,
+    return Card(
+        elevation: 8.0,
+        margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+        child: Container(
+          decoration:
+              const BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+          child: ListTile(
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              leading: Container(
+                padding: const EdgeInsets.only(right: 12.0),
+                decoration: const BoxDecoration(
+                    border: Border(
+                        right: BorderSide(width: 1.0, color: Colors.white24))),
+                child: i,
               ),
-            ),
-            const SizedBox(
-              height: 55,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                    width: 90, height: 60, child: Image(image: myImage.image)),
-                const SizedBox(
-                  width: 150,
+              title: Text(
+                text,
+                style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              trailing: IconButton(
+                onPressed: () {
+                  f();
+                },
+                icon: const Icon(
+                  Icons.keyboard_arrow_right,
+                  size: 30,
                 ),
-                IconButton(
-                  onPressed: () => onpressed(),
-                  icon: const Icon(
-                      color: Colors.white, size: 60, Icons.play_circle_fill),
-                ),
-                const SizedBox(
-                  width: 30,
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
+              )),
+        ));
   }
 }
