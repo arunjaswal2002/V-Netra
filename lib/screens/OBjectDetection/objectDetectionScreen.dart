@@ -56,7 +56,7 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
         imageStd: 127.5,
         rotation: 90,
         numResults: 4,
-        threshold: 0.5,
+        threshold: 0.4,
         asynch: true,
       );
       result = "";
@@ -76,8 +76,10 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
+    // initCamera();¸¸¸
     loadModel();
+
+    super.initState();
   }
 
   @override
@@ -101,12 +103,12 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
                   onPressed: initCamera,
                   child: Container(
                       margin: EdgeInsets.only(top: 35),
-                      height: 400,
-                      width: 300,
+                      height: 200,
+                      width: 200,
                       child: imgCamera == null
                           ? Container(
                               height: 200,
-                              width: 350,
+                              width: 200,
                               child: Icon(
                                 Icons.photo_camera_front,
                                 color: Colors.blueAccent,
@@ -114,7 +116,7 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
                               ),
                             )
                           : AspectRatio(
-                              aspectRatio: 4 / 3,
+                              aspectRatio: cameraController!.value.aspectRatio,
                               child: CameraPreview(cameraController!),
                             )),
                 ),

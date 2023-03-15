@@ -84,6 +84,7 @@ class HomePage extends StatelessWidget {
             ServiceCard(Icon(Icons.image_outlined), 'Entertainment', () {}),
             ServiceCard(Icon(Icons.image_outlined), 'Reminder', () {}),
             ServiceCard(
+
                 Icon(Icons.image_outlined),
                 'Object Detection',
                 () => Navigator.of(context).push(MaterialPageRoute(
