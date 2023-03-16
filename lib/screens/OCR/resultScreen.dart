@@ -11,7 +11,7 @@ class ResultScreen extends StatelessWidget {
           title: const Text('Result'),
         ),
         body: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           padding: const EdgeInsets.all(30.0),
           width: double.infinity,

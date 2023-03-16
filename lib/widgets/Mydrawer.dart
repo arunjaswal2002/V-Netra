@@ -10,14 +10,19 @@ class MyDrawer extends StatelessWidget {
       padding: EdgeInsets.zero,
       children: [
         Container(
-            height: 60,
+            height: 80,
             padding: const EdgeInsets.only(left: 10, top: 20),
-            decoration: const BoxDecoration(color: Colors.orange),
-            child: const Text('V-Netra',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold))),
+            decoration: const BoxDecoration(
+              color: Color.fromRGBO(58, 66, 86, 1.0),
+            ),
+            child: Container(
+              margin: const EdgeInsets.only(top: 20),
+              child: const Text('V-Netra',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
+            )),
         ListTile(
           title: const Text('Item 1'),
           onTap: () {

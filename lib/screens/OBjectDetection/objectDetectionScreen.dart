@@ -75,16 +75,13 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
-    // initCamera();¸¸¸
+    // initCamera();
     loadModel();
-
     super.initState();
   }
 
   @override
   void dispose() async {
-    // TODO: implement dispose
     await Tflite.close();
     super.dispose();
   }
@@ -92,9 +89,9 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Object detection")),
+      appBar: AppBar(title: const Text("Object detection")),
       body: Container(
-        decoration: BoxDecoration(color: Colors.cyan),
+        decoration: const BoxDecoration(color: Colors.cyan),
         child: Column(
           children: [
             Stack(children: [
@@ -109,7 +106,7 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
                           ? Container(
                               height: 200,
                               width: 200,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.photo_camera_front,
                                 color: Colors.blueAccent,
                                 size: 40,
@@ -124,7 +121,7 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
             ]),
             Center(
               child: Container(
-                  margin: EdgeInsets.only(top: 55.0),
+                  margin: const EdgeInsets.only(top: 55.0),
                   child: SingleChildScrollView(
                     child: Text(
                       result,

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -44,19 +43,19 @@ class _ImageCaptioningState extends State<ImageCaptioning> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image Captioning'),
+        title: const Text('Image Captioning'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _caption.isEmpty
-                ? Text('Take a picture to generate a caption.')
+                ? const Text('Take a picture to generate a caption.')
                 : Text(_caption, textAlign: TextAlign.center),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
-              child: Text('Take Picture'),
               onPressed: _takePictureAndGenerateCaption,
+              child: const Text('Take Picture'),
             ),
           ],
         ),

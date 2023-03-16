@@ -34,7 +34,7 @@ class _LocationScreenState extends State<LocationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('My Location'),
+          title: const Text('My Location'),
         ),
         body: Container(
           width: double.infinity,
@@ -75,7 +75,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   launch(
                       "https://wa.me/$phoneNumber?text=My%20live%20location:%20https://www.google.com/maps?q=$position,$position");
                 },
-                child: Text('Share Location with family'),
+                child: const Text('Share Location with family'),
               )
             ],
           ),
