@@ -19,14 +19,14 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
 
   loadModel() async {
     await Tflite.loadModel(
-        model: 'assets/mobilenet_v1_1.0_224.tflite',
-        labels: 'assets/mobilenet_v1_1.0_224.txt');
+        model: 'assets/Data/mobilenet_v1_1.0_224.tflite',
+        labels: 'assets/Data/mobilenet_v1_1.0_224.txt');
   }
 
   @override
   void initCamera() {
     cameraController =
-        CameraController(widget.cameras[0], ResolutionPreset.medium);
+        CameraController(widget.cameras[0], ResolutionPreset.high);
     cameraController!.initialize().then((value) {
       if (!mounted) {
         return;
@@ -56,7 +56,7 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
         imageStd: 127.5,
         rotation: 90,
         numResults: 4,
-        threshold: 0.4,
+        threshold: 0.5,
         asynch: true,
       );
       result = "";
@@ -75,7 +75,7 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
 
   @override
   void initState() {
-    // initCamera();
+    initCamera();
     loadModel();
     super.initState();
   }
@@ -100,8 +100,8 @@ class _ObjectDetectionScreenState extends State<ObjectDetectionScreen> {
                   onPressed: initCamera,
                   child: Container(
                       margin: EdgeInsets.only(top: 35),
-                      height: 200,
-                      width: 200,
+                      height: 400,
+                      width: 300,
                       child: imgCamera == null
                           ? Container(
                               height: 200,

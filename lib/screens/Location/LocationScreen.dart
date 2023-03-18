@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:v_netra/widgets/Mydrawer.dart';
 
 class LocationScreen extends StatefulWidget {
   const LocationScreen({super.key});
@@ -31,11 +32,18 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('My Location'),
         ),
+        // drawer: MyDrawer(cameras),
         body: Container(
           width: double.infinity,
           child: Column(

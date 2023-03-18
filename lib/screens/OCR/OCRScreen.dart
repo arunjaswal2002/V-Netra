@@ -4,6 +4,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'dart:io';
 import './resultScreen.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class OCRScreen extends StatefulWidget {
   const OCRScreen({super.key});
@@ -15,8 +16,8 @@ class OCRScreen extends StatefulWidget {
 class _OCRScreenState extends State<OCRScreen> with WidgetsBindingObserver {
   var _isPermissionGranted = false;
   late final Future<void> _future;
+  var flutter_tts = FlutterTts();
   CameraController? _cameraController;
-
   final textRecognizer = TextRecognizer();
   @override
   void initState() {
@@ -28,6 +29,13 @@ class _OCRScreenState extends State<OCRScreen> with WidgetsBindingObserver {
   Future<void> _requestCameraPermission() async {
     final status = await Permission.camera.request();
     _isPermissionGranted = status == PermissionStatus.granted;
+  }
+
+  void _startSpeaking(String t) async {
+    await Future.delayed(const Duration(milliseconds: 2000), () {
+      var result = flutter_tts.speak(t);
+      if (result == 1) print('Speaking');
+    });
   }
 
   void startCamera() {
@@ -90,7 +98,7 @@ class _OCRScreenState extends State<OCRScreen> with WidgetsBindingObserver {
 
       final inputImage = InputImage.fromFile(file);
       final recognizedText = await textRecognizer.processImage(inputImage);
-
+      _startSpeaking(recognizedText.text);
       await navigator.push(
         MaterialPageRoute(
           builder: (BuildContext context) =>
@@ -151,7 +159,8 @@ class _OCRScreenState extends State<OCRScreen> with WidgetsBindingObserver {
               ),
             Scaffold(
               appBar: AppBar(
-                title: const Text('Text Recognition Sample'),
+                centerTitle: true,
+                title: const Text('OCR'),
               ),
               backgroundColor: _isPermissionGranted ? Colors.transparent : null,
               body: _isPermissionGranted

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
 import './screens/HomePage.dart';
 import 'package:camera/camera.dart';
 
@@ -19,9 +20,20 @@ class MyApp extends StatelessWidget {
       title: 'V-Netra',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.lightBlue,
+        primaryColor: Colors.lightBlue,
       ),
-      home: HomePage(cameras),
+      home: SplashScreen(
+          image: Image.asset(
+            'assets/logo.jpg',
+            alignment: Alignment.center,
+          ),
+          photoSize: 200.0,
+          backgroundColor: Color(0xff141720),
+          // styleTextUnderTheLoader: TextStyle(),
+          loaderColor: Colors.white,
+          seconds: 2,
+          navigateAfterSeconds: HomePage(cameras)),
     );
   }
 }
