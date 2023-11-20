@@ -1,6 +1,9 @@
-# v_netra
+# V_netra
 
 A new Flutter project.
+
+A visual to our app:
+https://drive.google.com/drive/folders/1ui2Fsi03SYICBNdCCfGcPAcDxRKzyHB1
 
 ## Getting Started
 
