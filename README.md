@@ -8,6 +8,10 @@ https://drive.google.com/drive/folders/1ui2Fsi03SYICBNdCCfGcPAcDxRKzyHB1
 Deployed on Devfolio.
 https://devfolio.co/projects/v-netra-73ee
 
+Screen Shots :
+
+<img width="780" alt="V-netra" src="https://github.com/arunjaswal2002/V-Netra/assets/75573505/8a0bf4db-788a-4ee0-9b64-910625b1f6f0">
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
