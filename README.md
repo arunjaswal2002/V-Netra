@@ -5,6 +5,9 @@ A new Flutter project.
 A visual to our app:
 https://drive.google.com/drive/folders/1ui2Fsi03SYICBNdCCfGcPAcDxRKzyHB1
 
+Deployed on Devfolio.
+https://devfolio.co/projects/v-netra-73ee
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
